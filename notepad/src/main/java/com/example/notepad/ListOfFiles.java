@@ -15,6 +15,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.FileNameMap;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,6 +24,7 @@ import java.util.List;
 public class ListOfFiles extends AppCompatActivity {
 
     public static final String KEY_NAME = "fileName";
+    long size;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +64,8 @@ public class ListOfFiles extends AppCompatActivity {
         for(File f1 :files){
             Date date = new Date(f1.lastModified());
 
-            fileItems.add(new MyMenu(R.drawable.ic_note_add_black_24dp,""+f1.getName(),""+(new SimpleDateFormat("dd-MMM-yyyy HH-mm-ss").format(date)),""+f1.length(),""));
+            size = f1.length();
+            fileItems.add(new MyMenu(R.drawable.ic_note_add_black_24dp,""+f1.getName(),""+(new SimpleDateFormat("dd-MMM-yyyy HH-mm-ss").format(date)),SizeChange(size),""));
         }
 
         ((ListView)findViewById(R.id.lstFiles)).setAdapter(new FileAdapter(this,fileItems));
@@ -112,4 +115,32 @@ public class ListOfFiles extends AppCompatActivity {
             }
         });
     }
+
+
+    private String SizeChange(long size){
+
+                        String hrSize = null;
+
+                       double b = size;
+               double k = size/1024.0;
+               double m = ((size/1024.0)/1024.0);
+               double g = (((size/1024.0)/1024.0)/1024.0);
+               double t = ((((size/1024.0)/1024.0)/1024.0)/1024.0);
+
+                        DecimalFormat dec = new DecimalFormat("0.00");
+
+                        if ( t>1 ) {
+                        hrSize = dec.format(t).concat(" TB");
+                    } else if ( g>1 ) {
+                        hrSize = dec.format(g).concat(" GB");
+                    } else if ( m>1 ) {
+                        hrSize = dec.format(m).concat(" MB");
+                   } else if ( k>1 ) {
+                       hrSize = dec.format(k).concat(" KB");
+                   } else {
+                       hrSize = dec.format(b).concat(" Bytes");
+                   }
+
+                        return hrSize;
+            }
 }

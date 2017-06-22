@@ -57,6 +57,9 @@ public class EditFile extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     Toast.makeText(EditFile.this,"File Edited successfully !",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(EditFile.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
 
                 }
             }
@@ -81,7 +84,7 @@ public class EditFile extends AppCompatActivity {
                 File file = new File(filepath,strFileName);
                 Boolean delFStatus = file.delete();
                 Toast.makeText(EditFile.this,"Note Deleted Successfully",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(EditFile.this,MainActivity.class);
+                Intent intent = new Intent(EditFile.this,ListOfFiles.class);
                 startActivity(intent);
                 finish();
             }

@@ -89,6 +89,10 @@ public class newedit extends AppCompatActivity {
 
                     findViewById(R.id.edtFileName).setEnabled(false);
                     Toast.makeText(newedit.this, "Note Saved Successfully", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(newedit.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
