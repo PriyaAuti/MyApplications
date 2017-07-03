@@ -57,7 +57,7 @@ public class EditFile extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     Toast.makeText(EditFile.this,"File Edited successfully !",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(EditFile.this, MainActivity.class);
+                    Intent intent = new Intent(EditFile.this, ListOfFiles.class);
                     startActivity(intent);
                     finish();
 
@@ -69,7 +69,7 @@ public class EditFile extends AppCompatActivity {
         findViewById(R.id.imgBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EditFile.this,MainActivity.class);
+                Intent intent = new Intent(EditFile.this,ListOfFiles.class);
                 startActivity(intent);
                 finish();
             }

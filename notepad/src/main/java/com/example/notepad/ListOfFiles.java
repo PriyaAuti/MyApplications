@@ -65,7 +65,7 @@ public class ListOfFiles extends AppCompatActivity {
             Date date = new Date(f1.lastModified());
 
             size = f1.length();
-            fileItems.add(new MyMenu(R.drawable.ic_note_add_black_24dp,""+f1.getName(),""+(new SimpleDateFormat("dd-MMM-yyyy HH-mm-ss").format(date)),SizeChange(size),""));
+            fileItems.add(new MyMenu(R.drawable.ic_insert_drive_file_black_24dp,""+f1.getName(),""+(new SimpleDateFormat("dd-MMM-yyyy HH-mm-ss").format(date)),SizeChange(size),""));
         }
 
         ((ListView)findViewById(R.id.lstFiles)).setAdapter(new FileAdapter(this,fileItems));
@@ -144,3 +144,4 @@ public class ListOfFiles extends AppCompatActivity {
                         return hrSize;
             }
 }
+
