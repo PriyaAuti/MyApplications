@@ -1,1 +1,1 @@
-# MyNotes Android App
+# "MyNotes" Android App
