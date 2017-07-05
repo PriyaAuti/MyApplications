@@ -7,8 +7,6 @@
 ![unnamed](https://user-images.githubusercontent.com/28917416/27839811-eb7ed01e-6111-11e7-95e0-1878d7931d70.png)
 ### 1) New
 ####   In this module, user can add new note and save it.
-![screenshot_new](https://user-images.githubusercontent.com/28917416/27840075-d3fd96da-6113-11e7-8438-4df552f32829.png)
-
 ### 2) EDIT
 ####   In this module,user can edit already saved notes , User can also delete the note.
 ![unnamed 1](https://user-images.githubusercontent.com/28917416/27840085-eda3223a-6113-11e7-85b6-cb70edc9d0f9.png)
