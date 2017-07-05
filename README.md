@@ -3,7 +3,7 @@
 #### This app basically lets the user save the notes in the application .
 #### It consists of two modules :
 #### New & Edit
-<img src="MyApplications/notepad/images/unnamed.png" >
+
 
 ### 1) New
 #### In this module, user can add new note and save it.
